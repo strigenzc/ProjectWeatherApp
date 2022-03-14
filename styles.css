@@ -1,0 +1,159 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  background: #e4f1fe;
+}
+
+h1{
+color:  #22313f;
+display: block;
+font-size: 29px;
+font-weight: 400;
+text-align: left;
+width: 326px;
+margin:0px 0px 15px;
+}
+
+ul{
+  margin:0 0 10px;
+  padding: 0;
+  color: #34495e; 
+}
+
+li{
+  list-style: none;
+  color rgb:(135, 134, 135);
+  display: block;
+  font-size: 16px;
+  font-weight: 100;
+  height:19px;
+  line-height: 19.2px;
+  text-align: left;
+}
+
+footer{
+  font-size: x-small;
+  text-align: center;
+  color: #34495e; 
+}
+.weather-app {
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 50px;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.temperature {
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 1;
+  color: #34495e; 
+}
+
+.weather-icon {
+  height: 64px;
+  width: 64ox;
+  margin-right: 10px;
+}
+
+.units {
+   position: relative;
+   top: -32px;
+   color: #34495e; 
+}
+
+.weather-search {
+  margin-bottom: 20px;
+}
+
+.forecast{
+  color: #34495e;
+  padding-top: 35px;
+  text-align: center;
+  position: relative;
+  left: 100px;
+}
+
+
+let city = prompt("Enter a city...")
+city = city.toLowerCase();
+if (weather[city] !== undefined) {
+  let temperature = weather[city].temp;
+  let humidity = weather[city].humidity;
+  let celsius = Math.round(temperature);
+  let fahrenheit = Math.round((temperature * 9) / 5 + 32);
+
+  alert(
+    `It is currently ${celsius}°C (${fahrenheit}°F) in ${city} with a humidity of ${humidity}%`
+  );
+} else {
+  alert(
+    `Sorry we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
+  );
+}
+
+
+<body>
+	<div class="container">
+		<div class="weather-app">
+			<form class="weather-search">
+				<div class="row">
+					<div class="col-9">
+						<input type="search" id="search-bar" placeholder="Type a city..." autofocus="on" autocomplete="off"
+							class="form-control" /></div>
+					<div class="col-3">
+						<input type="submit" value="Search" class="form-control btn btn-primary shadow" />
+					</div>
+				</div>
+			</form>
+			<h1>
+				Budapest, Hungary
+			</h1>
+			<ul>
+				<li>
+					Wednesday 22:00
+				</li>
+				<li>
+					Partly Cloudy
+				</li>
+			</ul>
+		<div class="row">
+          <div class="col-6">
+            <div class="clearfix">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="Cloudy icon"
+                class="weather-icon float-left"
+              />
+              <div class="float-left">
+                <span class="temperature" id="temperature">19</span
+                ><span class="units">
+                  <a href="#" id="celsius-link">°C</a> |
+                  <a href="#" id="fahrenheit-link">°F</a>
+                </span>
+              </div>
+            </div>
+          </div>
+				<div class="col-6">
+					<ul>
+						<li>
+							Precipitation 0%
+						</li>
+						<li>
+							Humidity 77%
+						</li>
+						<li>
+							Wind: 8 km/hr
+						</li>
+					</ul>
+					</div>
+			</div><br><br>
+			<footer>Coded By Catie</footer>
+		</div>
+	</div>
+	<script src="src/index.js"></script>
+</body>
+
+</html>
