@@ -14,7 +14,6 @@ width: 326px;
 margin:0px 0px 15px;
 }
 
-
 ul{
   margin:0 0 10px;
   padding: 0;
@@ -76,85 +75,3 @@ footer{
   position: relative;
   left: 100px;
 }
-
-
-let city = prompt("Enter a city...")
-city = city.toLowerCase();
-if (weather[city] !== undefined) {
-  let temperature = weather[city].temp;
-  let humidity = weather[city].humidity;
-  let celsius = Math.round(temperature);
-  let fahrenheit = Math.round((temperature * 9) / 5 + 32);
-
-  alert(
-    `It is currently ${celsius}°C (${fahrenheit}°F) in ${city} with a humidity of ${humidity}%`
-  );
-} else {
-  alert(
-    `Sorry we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
-  );
-}
-
-
-<body>
-	<div class="container">
-		<div class="weather-app">
-			<form class="weather-search">
-				<div class="row">
-					<div class="col-9">
-						<input type="search" id="search-bar" placeholder="Type a city..." autofocus="on" autocomplete="off"
-							class="form-control" /></div>
-					<div class="col-3">
-						<input type="submit" value="Search" class="form-control btn btn-primary shadow" />
-					</div>
-				</div>
-			</form>
-			<h1>
-				Budapest, Hungary
-			</h1>
-			<ul>
-				<li>
-					Wednesday 22:00
-				</li>
-				<li>
-					Partly Cloudy
-				</li>
-			</ul>
-		<div class="row">
-          <div class="col-6">
-            <div class="clearfix">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="Cloudy icon"
-                class="weather-icon float-left"
-              />
-              <div class="float-left">
-                <span class="temperature" id="temperature">19</span
-                ><span class="units">
-                  <a href="#" id="celsius-link">°C</a> |
-                  <a href="#" id="fahrenheit-link">°F</a>
-                </span>
-              </div>
-            </div>
-          </div>
-				<div class="col-6">
-					<ul>
-						<li>
-							Precipitation 0%
-						</li>
-						<li>
-							Humidity 77%
-						</li>
-						<li>
-							Wind: 8 km/hr
-						</li>
-					</ul>
-					</div>
-			</div><br><br>
-			<footer>Coded By Catie</footer>
-		</div>
-	</div>
-	<script src="src/index.js"></script>
-</body>
-
-</html>
