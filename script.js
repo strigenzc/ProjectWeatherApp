@@ -95,5 +95,6 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(getWeatherLocation);
 }
 
+
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getPosition);
