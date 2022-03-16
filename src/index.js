@@ -1,4 +1,4 @@
-/ Feature #1-displaying current time and date
+// Feature #1-displaying current time and date
 function formatTime(date) {
   let hours = date.getHours();
   if (hours < 10) {
@@ -17,7 +17,7 @@ function formatTime(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let day = days[dayList];
   return `${day} ${hours}:${minutes}`;
@@ -37,18 +37,18 @@ function showLocation(city) {
   axios.get(apiURL).then(showTemp);
 }
 
-	function showTemp(response) {
-    document.querySelector("#city").innerHTML = response.data.name;
-    document.querySelector("#temperature").innerHTML = Math.round(
-      response.data.main.temp
-    );
-    document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-    document.querySelector("#wind-speed").innerHTML = Math.round(
-      response.data.wind.speed
-    );
-    document.querySelector("#description").innerHTML =
-      response.data.weather[0].main;
-  }
+function showTemp(response) {
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind-speed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
+}
 
 function search(event) {
   event.preventDefault();
@@ -94,7 +94,6 @@ function getPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getWeatherLocation);
 }
-
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getPosition);
